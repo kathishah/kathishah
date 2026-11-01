@@ -2,9 +2,9 @@
 
 Twenty-five years of well-architected engineering work, from writing code to advising boards, always starting from what the company needs.
 
-CTO, VP Engineering, fractional CTO, or field engineer embedded with a customer, through [ArjunTech](https://arjuntech.com). The work is solution-oriented and crosses domains, and it rests on the same fundamentals each time: layers that contain complexity, software that stays extensible, maintainable and secure, and nothing more elaborate than the problem needs. The projects below show it in practice across imaging, fitness, home media, cloud operations, trading and household finance: clear interfaces between the parts, security trade-offs and failure modes written down, and tests behind the code.
+CTO, VP Engineering, fractional CTO, or field engineer embedded with a customer, through [ArjunTech](https://arjuntech.com). The work is solution-oriented and crosses domains, and it rests on the same fundamentals each time: layers that contain complexity, software that stays extensible, maintainable and secure, and nothing more elaborate than the problem needs. The projects below show it in practice across imaging, fitness, home media, cloud operations, trading, household finance and games: clear interfaces between the parts, security trade-offs and failure modes written down, and tests behind the code.
 
-## Borne from personal pain points (public)
+## Public repos
 
 Each began as a personal pain point and kept public: use the apps, hosted versions, or fork, self-host and learn from the code.
 
@@ -12,6 +12,10 @@ Each began as a personal pain point and kept public: use the apps, hosted versio
 - **[strength](https://github.com/kathishah/strength)** (fitness): a workout tracker that runs fully offline in the browser and can sync to your own AWS account. Plain HTML, CSS and JavaScript with no framework or build step, one event log on the client, a documented sync contract, and a small storage interface so the backend can be swapped (there is a porting guide). The security trade-offs are written down. The tests run offline in CI. [Live demo](https://kathishah.github.io/strength/).
 - **[googletv](https://github.com/kathishah/googletv)** (home media): an Android TV screensaver that plays an Apple Photos library from a Mac over SMB. A `PhotoSource` interface separates where photos come from from how they are shown, decoding runs off the main thread, and a native C++ tile decoder handles very large (24 MP and up) HEIC photos. It is read-only by design, the home-network trust assumptions are stated, and it stays one small app until a second one needs shared code.
 - **[util](https://github.com/kathishah/util)** (cloud operations): shell and Python tools for auditing and bulk-tagging AWS resources, plus document converters and macOS and network helpers. The AWS tools are safe by default: the audit only reads unless asked to tag, and the bulk tagger previews first and writes only with `--apply`.
+
+My son and I designed together.
+
+- **[asura-hunt](https://github.com/kathishah/asura-hunt)** (games, October 2026 onward): an original Roblox action RPG that my son and I designed together. Pick a path, fight demons from Indian folklore, level up, buy gear and take on a boss in a walled fortress-city. The code is plain Luau synced into Roblox Studio with Rojo, so it lives in git with the map. The server decides damage, XP, gold and saving, tuning numbers sit in config files, and saves never overwrite newer data. CI runs lint, format, headless tests and a build on every pull request. Early days: combat, the shop and the first zone are built, and the boss fight is next.
 
 ## Trading and markets (private)
 
